@@ -9,6 +9,17 @@ interface ChatRequest {
   messages: Message[];
 }
 
+// Whitelist of allowed Perplexity models
+const ALLOWED_MODELS = [
+  "llama-3.1-sonar-small-128k-online",
+  "llama-3.1-sonar-large-128k-online",
+  "llama-3.1-sonar-huge-128k-online",
+  "llama-3.1-sonar-small-128k-chat",
+  "llama-3.1-sonar-large-128k-chat",
+];
+
+const DEFAULT_MODEL = "llama-3.1-sonar-small-128k-online";
+
 export async function POST(request: Request): Promise<Response> {
   try {
     const apiKey = process.env.PERPLEXITY_API_KEY;
@@ -25,7 +36,12 @@ export async function POST(request: Request): Promise<Response> {
     }
 
     const body = (await request.json()) as ChatRequest;
-    const model = process.env.PERPLEXITY_MODEL || "llama-3.1-sonar-small-128k-online";
+    const requestedModel = process.env.PERPLEXITY_MODEL || DEFAULT_MODEL;
+    
+    // Validate model against whitelist
+    const model = ALLOWED_MODELS.includes(requestedModel)
+      ? requestedModel
+      : DEFAULT_MODEL;
 
     // Add system message for trading strategy focus
     const messages: Message[] = [

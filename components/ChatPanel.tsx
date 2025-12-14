@@ -63,6 +63,16 @@ export function ChatPanel({ theme }: ChatPanelProps) {
       }
 
       const data = await response.json();
+      
+      // Validate response structure
+      if (!data.choices || !Array.isArray(data.choices) || data.choices.length === 0) {
+        throw new Error("Invalid response format from API");
+      }
+      
+      if (!data.choices[0].message || !data.choices[0].message.content) {
+        throw new Error("Missing message content in API response");
+      }
+
       const assistantMessage: Message = {
         role: "assistant",
         content: data.choices[0].message.content,
