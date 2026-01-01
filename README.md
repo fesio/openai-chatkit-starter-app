@@ -67,14 +67,14 @@ Before deploying your app, you need to verify the domain by adding it to the [Do
 
 ## FAQ
 
-### Gdzie znajdę mój token GitHub?
+### Where can I find my GitHub token? (PL: Gdzie znajdę mój token GitHub?)
 
-Ta aplikacja nie potrzebuje tokena GitHub, ale jeśli musisz go wygenerować do innych zadań (np. automatyzacji lub integracji CI/CD), postępuj tak:
+This app does not require a GitHub token, but if you need one for other tasks (automation or CI/CD), follow these steps:
 
-1. Zaloguj się do GitHuba i przejdź do **Settings** (Ustawienia) w prawym górnym rogu.
-2. W menu po lewej wybierz **Developer settings** → **Personal access tokens**.
-3. Wybierz typ tokena: **Fine-grained tokens** (zalecane) lub **Tokens (classic)**, a następnie kliknij **Generate new token**.
-4. Ustaw zakresy uprawnień, wygeneruj token i **skopiuj go od razu**—nie będzie dostępny ponownie. Przechowuj go jak hasło.
+1. Log in to GitHub and open **Settings** from the avatar menu (upper right).
+2. Go to **Developer settings** → **Personal access tokens**.
+3. Choose the type: **Fine-grained tokens** (recommended) or **Tokens (classic)**, then click **Generate new token**.
+4. Set the scopes you need, generate the token, and **copy it immediately**—it will not be shown again. Store it securely.
 
 ## References
 
