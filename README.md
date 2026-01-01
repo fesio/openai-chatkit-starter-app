@@ -65,6 +65,15 @@ Before deploying your app, you need to verify the domain by adding it to the [Do
 - Adjust starter prompts, greeting text, [chatkit theme](https://chatkit.studio/playground), and placeholder copy in [`lib/config.ts`](lib/config.ts).
 - Update the event handlers inside [`components/.tsx`](components/ChatKitPanel.tsx) to integrate with your product analytics or storage.
 
+## FAQ
+
+### Gdzie znajdę mój token GitHub?
+
+1. Zaloguj się do GitHuba i przejdź do **Settings** (Ustawienia) w prawym górnym rogu.
+2. W menu po lewej wybierz **Developer settings** → **Personal access tokens**.
+3. Wybierz typ tokena: **Fine-grained tokens** (zalecane) lub **Tokens (classic)**, a następnie kliknij **Generate new token**.
+4. Ustaw zakresy uprawnień, wygeneruj token i **skopiuj go od razu**—nie będzie dostępny ponownie. Przechowuj go jak hasło.
+
 ## References
 
 - [ChatKit JavaScript Library](http://openai.github.io/chatkit-js/)
